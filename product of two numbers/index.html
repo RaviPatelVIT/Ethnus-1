@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Product Calculator</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+    }
+    input, button {
+      margin: 8px 0;
+    }
+  </style>
+</head>
+<body>
+  <h2>Multiply Two Numbers</h2>
+
+  <label for="num1">Enter first number:</label><br>
+  <input type="number" id="num1" placeholder="e.g. 5"><br>
+
+  <label for="num2">Enter second number:</label><br>
+  <input type="number" id="num2" placeholder="e.g. 10"><br>
+
+  <button onclick="calculateProduct()">Calculate Product</button>
+
+  <h3 id="result"></h3>
+
+  <script>
+    function calculateProduct() {
+      // Get values from input fields
+      const num1 = parseFloat(document.getElementById("num1").value);
+      const num2 = parseFloat(document.getElementById("num2").value);
+
+      // Validate inputs
+      if (isNaN(num1) || isNaN(num2)) {
+        document.getElementById("result").innerText = "Please enter valid numbers.";
+        return;
+      }
+
+      // Calculate product
+      const product = num1 * num2;
+
+      // Display result
+      document.getElementById("result").innerText = `Product: ${product}`;
+    }
+  </script>
+</body>
+</html>
